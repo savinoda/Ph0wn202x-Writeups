@@ -37,3 +37,17 @@ If we try to interact with it by providing crafted input (e.g., changing the HTT
 **Now, you should already have identified the (possible) vulnerability but in case you have not, it will be clear if you simply google MitmProxy and gunicorn**
 
 <img src="5.png" width="600">
+
+The vulnerability is indeed the possibility of smuggling HTTP requests on the reverse proxy and reach the end point bypassing the filtering.
+In this case, our goal is to bypass the restriction on the `left` movement.
+The process of solving the challenge is the same as the one reported in this blogpost:
+https://blog.deteact.com/gunicorn-http-request-smuggling/
+Our goal is indeed to exploit the confusion between gunicorn and mitmproxy on the content-length and transfer-encoding headers.
+
+The only difference is that we need to also attach a session cookie that is probably used by the backend to keep track of the camera position.
+The requests to move left the camera are reported in the following picture
+
+<img src="6.png" width="700">
+
+
+
