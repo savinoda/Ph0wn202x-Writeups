@@ -28,3 +28,12 @@ Let's check what happens when we perform an action that is not going left.
 
 It looks like that the entity that replies to our request is `Ph0wn-1korn`.
 Although a bit **(deliberately)** obfuscated, the entity behing the request is quite clear: 1korn ~ gunicorn
+
+However, the WAF that blocks our requests when we speficy the `left` option is still unknown.
+If we try to interact with it by providing crafted input (e.g., changing the HTTP version in the HTTP request with something that does not exist) we discover that the system is using MitmProxy 6.0.0
+
+<img src="4.png" width="600">
+
+**Now, you should already have identified the (possible) vulnerability but in case you have not, it will be clear if you simply google MitmProxy and gunicorn**
+
+<img src="5.png" width="600">
