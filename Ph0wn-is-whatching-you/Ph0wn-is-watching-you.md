@@ -30,7 +30,7 @@ It looks like that the entity that replies to our request is `Ph0wn-1korn`.
 Although a bit **(deliberately)** obfuscated, the entity behing the request is quite clear: 1korn ~ gunicorn
 
 However, the WAF that blocks our requests when we speficy the `left` option is still unknown.
-If we try to interact with it by providing crafted input (e.g., changing the HTTP version in the HTTP request with something that does not exist) we discover that the system is using MitmProxy 6.0.0
+If we try to interact with it by providing crafted input (e.g., changing the HTTP version in the HTTP request with something that does not exist) we discover that the system is using MitmProxy 6.0.0 (thanks `tv0g` for providing it)
 
 <img src="4.png" width="600">
 
@@ -45,7 +45,7 @@ https://blog.deteact.com/gunicorn-http-request-smuggling/
 Our goal is indeed to exploit the confusion between gunicorn and mitmproxy on the content-length and transfer-encoding headers.
 
 The only difference is that we need to also attach a session cookie that is probably used by the backend to keep track of the camera position.
-The requests to move left the camera are reported in the following picture
+The requests to move left the camera are reported in the following picture (thanks `La Brosse Adam` for providing it):
 
 <img src="6.png" width="700">
 
