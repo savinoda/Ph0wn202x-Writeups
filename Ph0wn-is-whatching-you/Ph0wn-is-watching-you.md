@@ -44,7 +44,7 @@ The process of solving the challenge is the same as the one reported in this blo
 https://blog.deteact.com/gunicorn-http-request-smuggling/
 Our goal is indeed to exploit the confusion between gunicorn and mitmproxy on the content-length and transfer-encoding headers.
 
-The only difference is that we need to also attach a session cookie that is probably used by the backend to keep track of the camera position.
+The only difference is that we need to also attach a session cookie that is probably used by the backend **(indeed it's the case)** to keep track of the camera position for the different users.
 The requests to move left the camera are reported in the following picture (thanks `La Brosse Adam` for providing it):
 
 <img src="6.png" width="700">
